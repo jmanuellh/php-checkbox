@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox</title>
+</head>
+<body>
+
+    <input type="checkbox" value="2" id="dos" name="numero[]"><label for="dos">Dos</label>
+    <input type="checkbox" value="1" id="uno" name="numero[]"><label for="uno">Uno</label>
+    <form action="hola.php" id="form" method="POST">
+        <button onclick="enviar()">Enviar</button>
+    </form>
+    <script>
+        function enviar() {
+            let form = document.getElementById("form");
+            let numeros = document.getElementsByName("numero[]")
+            numeros.forEach((numero, key) => {
+                form.append(numeros[0]);
+            });
+            form.submit();
+        }
+    </script>
+</body>
+</html>
